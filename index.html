@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="icon" href="Favicon.ico">
+    <meta charset="utf-8">
+    <title>PoaTek Inc &middot; Whistler</title>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <script src="jquery.js"></script>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Whistler</a>
+        </div>
+        <form class="navbar-form navbar-right width-30">
+          <div class="form-group width-full">
+            <div class="searchInput">
+              <input id="searchBoxNav" type="text" class="form-control width-full" placeholder="Whistle Away">
+              <button type="button" class="btn btn-default searchButton" aria-label="Left Align">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="center" id="searchForm">
+        <p class="noMargin">Search your tune:</p>
+        <div class="searchInput">
+          <input id="searchBox" type="text" class="form-control searchBar" placeholder="Whistle Away">
+          <button type="button" class="btn btn-default searchButton" aria-label="Left Align" onclick="mainSearch()">Search</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

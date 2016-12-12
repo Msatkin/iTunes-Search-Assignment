@@ -1,0 +1,37 @@
+.center {
+  margin: auto;
+  max-width: 50%;
+  margin-top: 15%;
+}
+.noMargin {
+  margin: 0;
+}
+Body {
+  font-family: Verdana;
+
+}
+.width-30 {
+  max-width: 30%;
+  min-width: 30%;
+}
+
+.width-full {
+  max-width: 100%;
+  min-width: 100%;
+}
+.searchInput {
+    position:relative;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+}
+
+.searchButton {
+    position:absolute;
+    right:0;
+    top:0;
+    border:0;
+    min-height: 100%;
+}
+
+.searchBar {
+    padding-right:30px;
+}
