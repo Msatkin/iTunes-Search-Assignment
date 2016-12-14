@@ -15,11 +15,11 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Whistler</a>
         </div>
-        <form id="searchFormNav" class="navbar-form navbar-right width-30" hidden="true">
+        <form id="searchFormNav" class="navbar-form navbar-right width-30">
           <div class="form-group width-full">
             <div class="searchInput">
-              <input id="searchBoxNav" type="text" class="form-control width-full" placeholder="Whistle Away">
-              <button type="button" class="btn btn-default searchButton" aria-label="Left Align">Search</button>
+              <input id="searchBoxNav" type="text" class="form-control width-full" placeholder="Whistle Away" onkeyup="onPressMain(event.keyCode, searchBoxButtonNav);">
+              <button id="searchBoxButtonNav" type="button" class="btn btn-default searchButton" aria-label="Left Align" onclick="mainSearch()">Search</button>
             </div>
           </div>
         </form>
@@ -29,35 +29,12 @@
       <div class="center" id="searchForm">
         <p class="noMargin">Search your tune:</p>
         <div class="searchInput">
-          <input id="searchBox" type="text" class="form-control searchBar" placeholder="Whistle Away" onkeyup="enterPress(event.keyCode);">
-          <button type="button" class="btn btn-default searchButton" aria-label="Left Align" onclick="mainSearch()">Search</button>
+          <input id="searchBox" type="text" autofocus class="form-control searchBar" placeholder="Whistle Away" onkeyup="onPressMain(event.keyCode, searchBoxButton);">
+          <button id="searchBoxButton" type="button" class="btn btn-default searchButton" aria-label="Left Align" onclick="mainSearch()">Search</button>
         </div>
       </div>
-      <div>
-        <br><br><br>
+      <div class="center">
         <ul id="results-list">
-          <li id="result" class="results" hidden="true">
-            <div class="row">
-              <div class="col-sm-3">
-                <img class="albumArt img-responsive pull-right" src=""/>
-              </div>
-              <div class="col-sm-3 songInfo pull-left">
-                <div class="row">
-                  <p class="songTitle">Title</p>
-                </div>
-                <div class="row">
-                  <p class="songArtist">Artist</p>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="row audioControls">
-                  <audio class="shadowBorder" controls>
-                    <source class = "audioPlayer" src="">
-                  </audio>
-                </div>
-              </div>
-            </div>
-          </li>
 
         </ul>
       </div>

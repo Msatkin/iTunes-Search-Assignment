@@ -1,14 +1,33 @@
 /* jshint -W041 */
+var defaultResultList;
+$(document).ready(function() {
+  defaultResultList = $('#results-list');
+});
 function mainSearch() {
-    var searchbar = $('#searchBox');
-    var searchDiv = $('#searchForm');
-    var searchDivNav = $('#searchFormNav');
-    if (searchbar[0].value == "") {
-        return;
+  console.log('searching...');
+    var searchBar = $('#searchBox')[0];
+    var searchDiv = $('#searchForm')[0];
+    var searchDivNav = $('#searchFormNav')[0];
+    var searchBarNav = $('#searchBoxNav')[0];
+    var results = null;
+    var criteria;
+    console.log("display", searchDiv.style.display);
+    if (searchDiv.style.display == 'none') {
+      if (searchBarNav.value == "") {
+          return;
+      }
+      criteria = searchBarNav.value;
+      console.log('navsearch', criteria);
     }
-    $(searchDiv).hide();
-    $(searchDivNav).show();
-    var results = GetSearchResults(searchbar[0].value);
+    else {
+      if (searchBar.value == "") {
+          return;
+      }
+      criteria = searchBar.value;
+      $(searchDiv).hide();
+      $(searchDivNav).show();
+    }
+    results = GetSearchResults(criteria);
 }
 
 function GetSearchResults(searchCriteria) {
@@ -24,26 +43,25 @@ function GetSearchResults(searchCriteria) {
 
 function DisplaySearchResults(results) {
     console.log(results);
-
-    var resultDisplay = $('#result');
     var resultList = $('#results-list');
+    var resultDisplay = $('#result');
+    resultList.empty();
+    resultList.append(resultDisplay);
     for (var result in results) {
-        console.log("result", results[result]);
-        var newResult = resultDisplay.clone();
-        var title = results[result].trackName;
-        var artist = results[result].artistName
-        newResult.attr("id", "result" + result);
-        newResult.attr("hidden", false);
-        newResult.find('.albumArt').attr("src", results[result].artworkUrl100);
-        newResult.find('.songTitle').replaceWith("<p class=\"songTitle\">" + title + "</p>");
-        newResult.find('.songArtist').replaceWith("<p class=\"songArtist\">" + artist + "</p>");
-        newResult.find('.audioPlayer').attr("src", results[result].previewUrl);
-        resultList.append(newResult);
+      var title = results[result].trackName;
+      var artist = results[result].artistName;
+      var newResult = '<li id="result' + result + '" class="results"><div><img class="albumArt img-responsive" src="' + results[result].artworkUrl100.replace('100x100','2180x2180') +'"/><div class="artCover"><p class="songTitle">' + title + '</p><p class="songArtist">' + artist + '</p><div class="audioControls"><audio controls class="audioPlayer" src="' + results[result].previewUrl + '"/></div></div></div></li>';
+      resultList.append(newResult);
     }
 }
 
-function enterPress(keyPressed) {
+function onPressNav(keyPressed) {
     if (keyPressed == 13) {
         mainSearch();
+    }
+}
+function onPressMain(keyPressed, button) {
+    if (keyPressed == 13) {
+      button.click();
     }
 }
