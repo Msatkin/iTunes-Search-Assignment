@@ -35,3 +35,41 @@ Body {
 .searchBar {
     padding-right:30px;
 }
+
+.results {
+  margin: auto;
+  background-color: #6b7a89;
+  color: #d2d7db;
+  max-width: 650px;
+  min-width: 650px;
+  margin-top: 2%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 25px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+}
+
+.songTitle {
+  margin-left: 5%;
+}
+.songArtist {
+  margin-left: 5%;
+}
+
+#results-list {
+  list-style-type: none;
+}
+
+.songInfo {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.audioControls{
+  position: relative;
+  margin: auto;
+}
+
+.shadowBorder {
+  border-radius: 25px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+}
