@@ -1,12 +1,33 @@
 .center {
   margin: auto;
-  max-width: 50%;
-  margin-top: 10%;
+  max-width: 35%;
+  margin-top: 7%;
 }
-@media (max-width: 420px) {
+@media (max-width: 600px) {
   .center {
     margin: auto;
-    max-width: 70% !important;
+    max-width: 85% !important;
+    margin-top: 10%;
+  }
+}
+@media (max-width: 700px) {
+  .center {
+    margin: auto;
+    max-width: 75%;
+    margin-top: 10%;
+  }
+}
+@media (max-width: 800px) {
+  .center {
+    margin: auto;
+    max-width: 65%;
+    margin-top: 10%;
+  }
+}
+@media (max-width: 900px) {
+  .center {
+    margin: auto;
+    max-width: 55%;
     margin-top: 10%;
   }
 }
@@ -18,8 +39,8 @@ Body {
 
 }
 .width-30 {
-  max-width: 30%;
-  min-width: 30%;
+  max-width: 45%;
+  min-width: 220px;
 }
 
 .width-full {
@@ -28,6 +49,7 @@ Body {
 }
 .searchInput {
     position:relative;
+    max-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
 }
 
@@ -43,6 +65,10 @@ Body {
     padding-right:30px;
 }
 #searchFormNav {
+  float:left;
+  display: none;
+}
+#paginationNav {
   display: none;
 }
 .results {

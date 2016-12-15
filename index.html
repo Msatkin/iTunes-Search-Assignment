@@ -11,32 +11,31 @@
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
           <a class="navbar-brand" href="#">Whistler</a>
-        </div>
-        <form id="searchFormNav" class="navbar-form navbar-right width-30">
-          <div class="form-group width-full">
-            <div class="searchInput">
-              <input id="searchBoxNav" type="text" class="form-control width-full" placeholder="Whistle Away" onkeyup="onPressMain(event.keyCode, searchBoxButtonNav);">
-              <button id="searchBoxButtonNav" type="button" class="btn btn-default searchButton" aria-label="Left Align" onclick="mainSearch()">Search</button>
-            </div>
+          <div id="searchFormNav" class="searchInput">
+            <input id="searchBoxNav" type="text" class="form-control searchBar width-full" placeholder="Whistle Away" onkeyup="onPress(event.keyCode);"/>
+            <button id="searchBoxButtonNav" type="button" class="btn btn-default searchButton" aria-label="Left Align" onclick="mainSearch()">Search</button>
           </div>
-        </form>
+    </nav>
+    <nav id="paginationNav" class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid text-center">
+        <ul class="pagination">
+        </ul>
       </div>
     </nav>
     <div class="row">
       <div class="center" id="searchForm">
         <p class="noMargin">Search your tune:</p>
         <div class="searchInput">
-          <input id="searchBox" type="text" autofocus class="form-control searchBar" placeholder="Whistle Away" onkeyup="onPressMain(event.keyCode, searchBoxButton);">
+          <input id="searchBox" type="text" autofocus class="form-control searchBar" placeholder="Whistle Away" onkeyup="onPress(event.keyCode);"/>
           <button id="searchBoxButton" type="button" class="btn btn-default searchButton" aria-label="Left Align" onclick="mainSearch()">Search</button>
         </div>
       </div>
       <div class="center">
         <ul id="results-list">
-
+          <li></li>
         </ul>
+        <br><br><br><br>
       </div>
     </div>
   </body>
